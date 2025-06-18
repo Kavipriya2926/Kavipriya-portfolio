@@ -1,10 +1,11 @@
 import { Suspense } from "react";
 import PageBox from "@/components/core/PageBox";
 //import ProjectsSection1 from "@/components/projects/Section1";
-import ProjectsSection2 from "@/components/projects/Section2";
+//import ProjectsSection2 from "@/components/projects/Section2";
 import Modal from "@/components/core/Modal";
 import GalleryImageView from "@/components/common/GalleryImageView";
 //<ProjectsSection1 />
+//<ProjectsSection2 />
 const ProjectDetails = ({
   params,
   searchParams,
@@ -14,7 +15,7 @@ const ProjectDetails = ({
       <PageBox>
         <Suspense>
           
-          <ProjectsSection2 />
+          
         </Suspense>
       </PageBox>
 
