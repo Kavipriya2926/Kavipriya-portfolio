@@ -13,12 +13,11 @@ const FloatingNavbar = dynamic(() =>
   import("@/components/navbar/FloatingNavbar")
 );
 const ScrollToTop = dynamic(() => import("@/components/common/ScrollToTop"));
-
+//<HomeSection1 id="hero" />
 const Home = () => {
   return (
     <PageBox>
       <FloatingNavbar className="app_nav" navItems={menuItems} />
-      <HomeSection1 id="hero" />
       <HomeSection2 id="services" />
       <HomeSection3 id="experiences" />
       <HomeSection4 id="skills" />
