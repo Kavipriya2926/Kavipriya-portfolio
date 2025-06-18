@@ -67,12 +67,25 @@ const IconSkeleton = ({ item }: Readonly<{ item: IServiceItem }>) => {
   ];
 
   useEffect(() => {
-    //@ts-ignore
-    animate(sequence, {
-      repeat: Infinity,
-      repeatDelay: 1,
-    });
-  }, []);
+  let isCancelled = false;
+
+  const loopAnimation = async () => {
+    while (!isCancelled) {
+      for (const step of sequence) {
+        // @ts-ignore: animate expects string selector, props, and options
+        await animate(step[0], step[1], step[2]);
+      }
+      await new Promise((resolve) => setTimeout(resolve, 1000)); // repeatDelay: 1 second
+    }
+  };
+
+  loopAnimation();
+
+  return () => {
+    isCancelled = true;
+  };
+}, []);
+
 
   return (
     <div className="overflow-hidden h-full relative flex items-center justify-center">
